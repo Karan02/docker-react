@@ -21,7 +21,7 @@ jobs:
       - name: Build and test
         uses: docker/build-push-action@v6
         with:
-          # target: test
+          target: test
           load: true
 
       - name: Build and push
@@ -29,5 +29,5 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          # target: prod
+          target: prod
           tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
